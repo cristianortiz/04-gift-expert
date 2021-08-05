@@ -9,9 +9,10 @@ import {
 
 const GiftExpertApp = () => {
   const [categories, setCategories] = useState(["Love", "Gundam", "Chayanne"]);
-  /* const addCategory = (value) => {
+  //function to add a category from another component
+  const addCategory = (value) => {
     setCategories([...categories, value]);
-  }; */
+  };
 
   return (
     <>
@@ -19,7 +20,7 @@ const GiftExpertApp = () => {
         <TopBarTitleContainer>
           <TopBarTitle>GifExpert</TopBarTitle>
         </TopBarTitleContainer>
-        <AddCategory />
+        <AddCategory addCategory={addCategory} />
       </TopBar>
       <MainContent>
         <ul>
