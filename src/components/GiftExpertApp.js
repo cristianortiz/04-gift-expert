@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import AddCategory from "./AddCategory";
+import GifGrid from "./GifGrid";
 import {
   TopBar,
   TopBarTitleContainer,
   TopBarTitle,
   MainContent,
+  GifList,
 } from "./GiftExpert.styles";
 
 const GiftExpertApp = () => {
-  const [categories, setCategories] = useState(["Love", "Gundam", "Chayanne"]);
+  const [categories, setCategories] = useState(["Chayanne"]);
   //function to add a category from another component
   const addCategory = (value) => {
     setCategories([...categories, value]);
@@ -23,11 +25,11 @@ const GiftExpertApp = () => {
         <AddCategory addCategory={addCategory} />
       </TopBar>
       <MainContent>
-        <ul>
-          {categories.map((category) => {
-            return <li key={category}>{category}</li>;
-          })}
-        </ul>
+        <GifList>
+          {categories.map((category) => (
+            <GifGrid key={category} category={category} />
+          ))}
+        </GifList>
       </MainContent>
     </>
   );

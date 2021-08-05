@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 import { AddCategorySearch, CategoryForm } from "./AddCategory.styles";
 
 const AddCategory = ({ addCategory }) => {
+  //local state to track the input form values entered by the user
   const [inputValue, setInputValue] = useState("");
+
+  //function to process the onChange event of form iunput
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
-
+  //handle form submit event when user press enter in the input
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim() === "") return;

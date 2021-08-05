@@ -21,3 +21,4 @@ export const TopBarTitle = styled.h2`
 export const AddButton = styled.button``;
 
 export const MainContent = styled.div``;
+export const GifList = styled.ul``;
