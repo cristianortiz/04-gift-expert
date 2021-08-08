@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { GifGridContainer } from "./GifGrid.styles";
+import GifGridItem from "./GifGridItem";
 
 const GifGrid = ({ category }) => {
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    getGifAPI();
+  }, []);
+
   const getGifAPI = async () => {
     const url =
       "https://api.giphy.com/v1/gifs/search?q=goku&limit=10&api_key=frfwNmdBg63dS4yNjLpsoOISBv941KJZ";
@@ -14,13 +21,15 @@ const GifGrid = ({ category }) => {
       };
     });
     console.log(gifs);
+    setImages(gifs);
   };
 
-  getGifAPI();
   return (
-    <div>
-      <h3>{category}</h3>
-    </div>
+    <GifGridContainer>
+      {images.map((img) => (
+        <GifGridItem key={img.id} {...img} />
+      ))}
+    </GifGridContainer>
   );
 };
 
