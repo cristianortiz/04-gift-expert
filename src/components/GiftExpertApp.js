@@ -6,7 +6,6 @@ import {
   TopBarTitleContainer,
   TopBarTitle,
   MainContent,
-  GifList,
 } from "./GiftExpert.styles";
 
 const GiftExpertApp = () => {
@@ -25,11 +24,9 @@ const GiftExpertApp = () => {
         <AddCategory addCategory={addCategory} />
       </TopBar>
       <MainContent>
-        <GifList>
-          {categories.map((category) => (
-            <GifGrid key={category} category={category} />
-          ))}
-        </GifList>
+        {categories.map((category) => (
+          <GifGrid key={category} category={category} />
+        ))}
       </MainContent>
     </>
   );
