@@ -12,7 +12,8 @@ const GiftExpertApp = () => {
   const [categories, setCategories] = useState(["Chayanne"]);
   //function to add a category from another component
   const addCategory = (value) => {
-    setCategories([...categories, value]);
+    //value first add new categorys retrieved in first place  in render
+    setCategories([value, ...categories]);
   };
 
   return (
