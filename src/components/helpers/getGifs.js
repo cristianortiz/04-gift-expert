@@ -1,3 +1,4 @@
+//helper function to request the API returns the promise with the response data
 const getGifAPI = async (category) => {
   const url = `https://api.giphy.com/v1/gifs/search?q=${encodeURI(
     category

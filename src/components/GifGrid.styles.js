@@ -5,9 +5,12 @@ export const GifGridContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  animation: fadeIn;
+  animation-duration: 2s;
 `;
 export const GifGridItemContainer = styled.div`
   position: relative;
+  background: #fff;
   height: auto;
   align-content: center;
   border: 1px solid lightgray;
