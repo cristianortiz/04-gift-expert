@@ -4,7 +4,7 @@ import { GifGridItemContainer, ItemImage, ItemTitle } from "./GifGrid.styles";
 const GifGridItem = ({ title, url }) => {
   return (
     <GifGridItemContainer>
-      <ItemImage src={url} alt={title} />
+      <ItemImage src={url} alt={title} data-testid="item-img" />
       <ItemTitle>{title}</ItemTitle>
     </GifGridItemContainer>
   );
