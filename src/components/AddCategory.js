@@ -9,6 +9,7 @@ const AddCategory = ({ addCategory }) => {
   //function to process the onChange event of form iunput
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+    console.log("handleInputChange called in");
   };
   //handle form submit event when user press enter in the input
   const handleSubmit = (e) => {

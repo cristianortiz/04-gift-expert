@@ -14,7 +14,7 @@ test("GifGridItem params shows correctly", () => {
   const img = screen.getByRole("img");
   // the app title must be inside a p tag
   expect(screen.getByText(title).tagName).toBe("P");
-  //the image element must have a src and alt atributes
+  //the rendered image element must have a src and alt atributes
   expect(img).toHaveAttribute("src", url);
   expect(img).toHaveAttribute("alt", title);
 });
