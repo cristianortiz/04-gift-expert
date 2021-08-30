@@ -1,7 +1,7 @@
 # React GIPHY API app
 ### https://cristianortiz.github.io/04-gift-expert/
 
-Another implementation of GIPHY API, to study several react aspects, like hooks and even custom hooks to API calls, styled components and basics test
+Another implementation of GIPHY API, to study several react aspects, like hooks and even custom hooks to API calls, styled components and testing
 
 ## Higlights
 
