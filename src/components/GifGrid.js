@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { GifGridContainer } from "./GifGrid.styles";
 import GifGridItem from "./GifGridItem";
 
@@ -21,3 +22,6 @@ const GifGrid = ({ category }) => {
 };
 
 export default GifGrid;
+GifGrid.propTypes = {
+  category: PropTypes.string.isRequired,
+};

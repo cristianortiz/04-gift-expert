@@ -14,8 +14,10 @@ const AddCategory = ({ addCategory }) => {
   //handle form submit event when user press enter in the input
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.trim() === "") return;
-    addCategory(inputValue);
+    if (inputValue.trim().length > 2) {
+      addCategory(inputValue);
+      setInputValue("");
+    }
   };
   return (
     <CategoryForm onSubmit={handleSubmit}>

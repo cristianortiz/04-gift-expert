@@ -1,5 +1,5 @@
 import React from "react";
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/dom";
 import { render, screen } from "@testing-library/react";
 import AddCategory from "../components/AddCategory";
 import userEvent from "@testing-library/user-event";
@@ -22,4 +22,25 @@ test("the text input must change if user enters a text", () => {
   userEvent.type(input, inputValue);
   //check if the input have the new value entered by the user
   expect(screen.getByRole("textbox")).toHaveValue(inputValue);
+});
+
+test("should not call addCategory if input text  < 3 characters", () => {
+  const input = screen.getByRole("textbox");
+  const inputValue = "go";
+  userEvent.type(input, inputValue);
+  userEvent.keyboard("{Enter}");
+  expect(addCategory).not.toHaveBeenCalled();
+});
+
+test("should call addCategory function and clean the text input", () => {
+  //get the input text an put a value on it
+  const input = screen.getByRole("textbox");
+  const inputValue = "gokucito";
+  userEvent.type(input, inputValue);
+  //simulate enter key press
+  userEvent.keyboard("{Enter}");
+  //check if the addCategory function is already called
+  expect(addCategory).toHaveBeenCalled();
+  //check if the input was set to " " in setInputValue line 19
+  expect(input).toHaveValue("");
 });
