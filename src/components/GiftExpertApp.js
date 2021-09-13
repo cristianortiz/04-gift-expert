@@ -20,7 +20,7 @@ const GiftExpertApp = () => {
     <>
       <TopBar>
         <TopBarTitleContainer>
-          <TopBarTitle data-testid="title-app">GiftExpert</TopBarTitle>
+          <TopBarTitle>GiftExpert</TopBarTitle>
         </TopBarTitleContainer>
         <AddCategory addCategory={addCategory} />
       </TopBar>

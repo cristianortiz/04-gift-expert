@@ -24,7 +24,7 @@ describe("testing <GifGrid /> component", () => {
   });
 
   test("should show the items when useFetchGifs is called", () => {
-    const gifs = [
+    const images = [
       {
         id: "ANCD",
         url: "https://localhost:3000/image.jpg",
@@ -34,11 +34,13 @@ describe("testing <GifGrid /> component", () => {
 
     //now call the mock custom hook whit fake values
     useFetchGifs.mockReturnValue({
-      data: gifs,
+      data: images,
       loading: false,
     });
     const category2 = "gundam";
     render(<GifGrid category={category2} />);
-    expect(screen.getByText("...Loading")).not.toBeInTheDocument();
+    const img = screen.getByRole("img");
+    //the rendered image element must have a src and alt atributes
+    expect(img).toHaveAttribute("alt", images.title);
   });
 });
